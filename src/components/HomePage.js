@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Search, Briefcase, LineChart, PieChart, BookOpen, LogIn, ClipboardCheck, UserCheck } from 'lucide-react';
 import FinancialChatbot from './FinancialChatbot';
 
@@ -9,7 +10,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo - Extreme Left */}
           <div className="flex-none">
-            <div className="flex items-center">
+            <Link to="/" className="flex items-center">
               <div className="bg-white p-2 rounded-lg">
                 <svg 
                   viewBox="0 0 24 24" 
@@ -20,42 +21,42 @@ const Navbar = () => {
                 </svg>
               </div>
               <span className="ml-3 text-xl font-bold text-white">JAGOINVESTOR</span>
-            </div>
+            </Link>
           </div>
 
           {/* Main Navigation Items - Centered */}
           <div className="flex items-center justify-center space-x-8 flex-1 px-32">
             {/* Portfolio */}
-            <a href="#" className="flex items-center space-x-2 text-white hover:text-indigo-200 transition-colors group">
+            <Link to="/portfolio" className="flex items-center space-x-2 text-white hover:text-indigo-200 transition-colors group">
               <div className="bg-indigo-400 bg-opacity-20 p-2 rounded-full group-hover:bg-opacity-30 transition-all">
                 <Briefcase size={18} />
               </div>
               <span className="font-medium">Portfolio</span>
-            </a>
+            </Link>
 
             {/* Mutual Fund/SIP */}
-            <a href="#" className="flex items-center space-x-2 text-white hover:text-indigo-200 transition-colors group">
+            <Link to="/mutual-funds" className="flex items-center space-x-2 text-white hover:text-indigo-200 transition-colors group">
               <div className="bg-indigo-400 bg-opacity-20 p-2 rounded-full group-hover:bg-opacity-30 transition-all">
                 <PieChart size={18} />
               </div>
               <span className="font-medium">Mutual Fund/SIP</span>
-            </a>
+            </Link>
 
             {/* Stock */}
-            <a href="#" className="flex items-center space-x-2 text-white hover:text-indigo-200 transition-colors group">
+            <Link to="/stocks" className="flex items-center space-x-2 text-white hover:text-indigo-200 transition-colors group">
               <div className="bg-indigo-400 bg-opacity-20 p-2 rounded-full group-hover:bg-opacity-30 transition-all">
                 <LineChart size={18} />
               </div>
               <span className="font-medium">Stock</span>
-            </a>
+            </Link>
 
             {/* Investment Guidelines */}
-            <a href="#" className="flex items-center space-x-2 text-white hover:text-indigo-200 transition-colors group">
+            <Link to="/guidelines" className="flex items-center space-x-2 text-white hover:text-indigo-200 transition-colors group">
               <div className="bg-indigo-400 bg-opacity-20 p-2 rounded-full group-hover:bg-opacity-30 transition-all">
                 <BookOpen size={18} />
               </div>
               <span className="font-medium">Investment Guidelines</span>
-            </a>
+            </Link>
           </div>
 
           {/* Right Side Items - Search and Sign In */}
@@ -81,6 +82,7 @@ const Navbar = () => {
     </nav>
   );
 };
+
 
 const HomePage = () => {
   return (
